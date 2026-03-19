@@ -11,7 +11,7 @@ const seedRoutes = require('./routes/seed');
 const app = express();
 
 app.use(cors({
-  origin: [process.env.FRONTEND_URL, "http://localhost:3000"],
+  origin: [process.env.FRONTEND_URL, "http://localhost:3000", "https://effulgent-cocada-0c0313.netlify.app/"],
   credentials: true
 }));
 app.use(express.json());
@@ -29,7 +29,4 @@ mongoose
 
 // Start server
 const PORT = 8080;
-if (process.env.NODE_ENV !== 'production') {
-  const PORT = process.env.PORT || 8080;
   app.listen(PORT, () => console.log(`Server running on ${PORT}`));
-}
